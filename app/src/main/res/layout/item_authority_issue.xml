@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header with User Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_avatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_user_placeholder" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="User Name"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Post Image -->
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0" />
+
+        <!-- Title, Description, and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issue Title"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/post_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="4dp"
+                android:text="Issue description goes here..." />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:id="@+id/status_dot"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/status_dot_red" /> <!-- Red dot -->
+
+                <TextView
+                    android:id="@+id/status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:text="Verified"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Action Button -->
+        <Button
+            android:id="@+id/btnAcceptIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="12dp"
+            android:text="Accept"
+            app:backgroundTint="@color/prakriya_teal" /> <!-- Or your preferred button color -->
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

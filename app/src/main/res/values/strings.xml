@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">prakriya2.0</string>
+
+    <!--
+        The string-arrays that were here have been MOVED to arrays.xml.
+        This file should only contain individual string values.
+    -->
+
+</resources>

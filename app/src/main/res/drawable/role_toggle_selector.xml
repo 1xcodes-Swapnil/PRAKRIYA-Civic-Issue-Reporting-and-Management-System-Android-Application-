@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#F8B733"/> <!-- yellow when active -->
+            <corners android:radius="24dp"/>
+            <stroke android:width="1dp" android:color="#F8B733"/>
+        </shape>
+    </item>
+
+    <!-- default (unchecked) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E6F2F1"/> <!-- pale teal background -->
+            <corners android:radius="24dp"/>
+            <stroke android:width="1dp" android:color="#C8DFDD"/>
+        </shape>
+    </item>
+</selector>

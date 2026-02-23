@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Yellow Color -->
+    <solid android:color="#FFC107" />
+
+    <!-- You can adjust the size directly here if needed, -->
+    <!-- but it's better to control it from the layout (width/height). -->
+    <size
+        android:width="10dp"
+        android:height="10dp" />
+
+</shape>

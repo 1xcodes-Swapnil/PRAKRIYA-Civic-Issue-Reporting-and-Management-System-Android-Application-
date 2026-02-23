@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="24dp"
+            android:text="Verification"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Reporter Information Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Reporter Information"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/dialogReporterAvatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle_background"
+                android:contentDescription="Reporter avatar"
+                android:padding="8dp"
+                android:src="@drawable/ic_user_placeholder" />
+
+            <TextView
+                android:id="@+id/dialogReporterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:text="Sam Sharma"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Issue Details Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="Issue Details"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Issue Image -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <ImageView
+                android:id="@+id/dialogIssueImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Issue Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pothole_image" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Issue Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Issue Title"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialogIssueTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Pothole On Road"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Description"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialogIssueDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp"
+            android:text="Significant crack on road, and been there for 2 days and not yet fixed"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Location Data Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="Location data"
+            android:textColor="#1976D2"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Geotagged Location -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Geotagged Location (from image)"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialogGeotaggedLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="Checking..."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- User Entered Location -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="User Entered Location"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialogUserEnteredLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="xyz, street, India"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Distance -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Distance"
+            android:textColor="#757575"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/dialogDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp"
+            android:text="Calculating..."
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSpam"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C62828"
+                android:text="Spam"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnVerified"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#00695C"
+                android:text="Verified"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

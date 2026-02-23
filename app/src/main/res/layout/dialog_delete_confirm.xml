@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@color/white">
+
+    <!-- THIS IS THE TITLE TEXT -->
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Report"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />  <!-- FORCEFULLY BLACK -->
+
+    <!-- THIS IS THE MESSAGE TEXT -->
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Are you sure you want to permanently delete this report?"
+        android:textSize="16sp"
+        android:textColor="@color/black" /> <!-- FORCEFULLY BLACK -->
+
+    <!-- This will hold the buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <!-- THE CANCEL BUTTON -->
+        <Button
+            android:id="@+id/dialog_button_cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:textColor="@color/prakriya_teal" /> <!-- FORCEFULLY TEAL -->
+
+        <!-- THE DELETE BUTTON -->
+        <Button
+            android:id="@+id/dialog_button_delete"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textStyle="bold"
+            android:textColor="@color/prakriya_teal" /> <!-- FORCEFULLY TEAL -->
+
+    </LinearLayout>
+
+</LinearLayout>

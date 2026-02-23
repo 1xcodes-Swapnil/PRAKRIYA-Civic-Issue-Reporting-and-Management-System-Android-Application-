@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context=".ProfileActivity">
+
+    <!-- Header (Unchanged) -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/prakriya"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:id="@+id/headerProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Profile"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="12dp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+
+    <!-- Main Scrollable Content (Unchanged) -->
+    <ScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- USER INFO SECTION (Unchanged) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/card_bg_white"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_user_large"
+                    android:background="@drawable/circle_bg"
+                    android:contentDescription="Profile Picture" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:id="@+id/profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loading Name..."
+                        android:textColor="@color/text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/profileEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="loading.email@..."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8dp">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_location"
+                            app:tint="@color/gray_medium"
+                            android:contentDescription="Location" />
+
+                        <TextView
+                            android:id="@+id/profileLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location not set"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:paddingStart="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ======================================================== -->
+            <!-- === FIX 1: "Edit Profile" button with TEAL color       === -->
+            <!-- ======================================================== -->
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Edit Profile"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                app:backgroundTint="@color/prakriya_teal"
+                app:cornerRadius="8dp" />
+
+            <!-- My Reports Section (Unchanged) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Reports"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:id="@+id/myReportsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true"
+                android:layout_marginBottom="24dp" />
+
+            <!-- ======================================================== -->
+            <!-- === FIX 2: "Logout" button with correct color method   === -->
+            <!-- ======================================================== -->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/prakriya_teal"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation (Unchanged) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:itemRippleColor="@android:color/transparent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

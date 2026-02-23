@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray">
+
+    <!-- Header (Unchanged) -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/text_primary"
+            android:contentDescription="Back"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Report Issue"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="16dp" />
+    </LinearLayout>
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/bottomNavigation">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Image Upload Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Photo"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Camera and Upload Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- ======================================================== -->
+                <!-- === FIX 1: "Take Photo" button with NO ICON          === -->
+                <!-- ======================================================== -->
+                <Button
+                    android:id="@+id/btnTakePhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Take Photo"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:backgroundTint="@color/prakriya_teal"
+                    app:cornerRadius="8dp" />
+
+                <!-- ======================================================== -->
+                <!-- === FIX 2: "Upload Photo" button with NO ICON        === -->
+                <!-- ======================================================== -->
+                <Button
+                    android:id="@+id/btnUploadPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Upload Photo"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    app:backgroundTint="@color/prakriya_teal"
+                    app:cornerRadius="8dp" />
+            </LinearLayout>
+
+            <!-- Image Upload Card (Unchanged) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/imageUploadCard"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/gray_light">
+                    <ImageView
+                        android:id="@+id/selectedImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        android:contentDescription="Selected Image" />
+                    <LinearLayout
+                        android:id="@+id/uploadPlaceholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:src="@drawable/ic_image"
+                            app:tint="@color/gray_medium"
+                            android:contentDescription="Image"
+                            android:layout_marginBottom="12dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No photo selected"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Issue Title (Unchanged) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issue Title"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+            <EditText
+                android:id="@+id/titleInput"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/input_bg"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:hint="Enter a brief title for the issue"
+                android:textColorHint="@color/gray_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Issue Type (Unchanged) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issue Type"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+            <Spinner
+                android:id="@+id/issueTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/input_bg"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Description (Unchanged) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+            <EditText
+                android:id="@+id/descriptionInput"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/input_bg"
+                android:padding="16dp"
+                android:hint="Describe the issue in detail..."
+                android:textColorHint="@color/gray_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:gravity="top"
+                android:inputType="textMultiLine|textCapSentences"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
+
+                <EditText
+                    android:id="@+id/locationInput"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_bg"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:hint="Enter location"
+                    android:textColorHint="@color/gray_medium"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp"
+                    android:inputType="text"
+                    android:layout_marginEnd="12dp" />
+
+                <!-- GPS Button (Unchanged and Correct) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUseGPS"
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="8dp"
+                    app:icon="@drawable/ic_gps"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconTint="@color/prakriya_teal"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    android:padding="0dp"
+                    app:strokeColor="@color/gray_medium"
+                    app:strokeWidth="1dp"
+                    android:contentDescription="Use GPS" />
+            </LinearLayout>
+
+            <!-- ======================================================== -->
+            <!-- === FIX 3: "Submit" button with TEAL color           === -->
+            <!-- ======================================================== -->
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Submit Report"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/prakriya_teal"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation (Unchanged) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

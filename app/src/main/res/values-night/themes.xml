@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+    Base application theme for DARK mode.
+    The parent is changed from DayNight to Dark.
+    -->
+    <style name="Base.Theme.Prakriya20" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- For example, you can define a different primary color for dark mode -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
+    <!-- The 'night' version of Theme.Prakriya20 will automatically use this Base theme. -->
+    <!-- You do not need to add the <style name="Theme.Prakriya20".../> tag here. -->
+    <!-- The system is smart enough to find the Base theme in this folder. -->
+
+</resources>

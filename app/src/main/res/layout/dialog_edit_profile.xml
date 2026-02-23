@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/card_bg_white">
+
+    <!-- Dialog Title (Unchanged) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Profile Picture Selection -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/dialogProfileImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_user_large"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_bg"
+            android:contentDescription="Profile Picture" />
+
+        <!-- ======================================================== -->
+        <!-- === FIX 1: "Change Picture" Button color is now TEAL === -->
+        <!-- ======================================================== -->
+        <Button
+            android:id="@+id/btnChangePicture"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Picture"
+            android:textStyle="bold"
+            android:textColor="@color/prakriya_teal"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Name Input (Unchanged) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="4dp"/>
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:inputType="textPersonName"
+        android:background="@drawable/dialog_edit_text_bg"
+        android:padding="12dp"
+        android:textColorHint="@color/grey"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Email Input (Unchanged) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="4dp"/>
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/grey"
+        android:hint="user@example.com"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/dialog_edit_text_bg"
+        android:padding="12dp"
+        android:textColor="#808080"
+        android:focusable="false"
+        android:clickable="false"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Location Input with GPS Button -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="4dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColorHint="@color/grey"
+            android:hint="Current location"
+            android:inputType="text"
+            android:background="@drawable/dialog_edit_text_bg"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:layout_marginEnd="12dp" />
+
+        <!-- ======================================================== -->
+        <!-- === FIX 2: GPS ICON is now TEAL and background white === -->
+        <!-- ======================================================== -->
+        <ImageButton
+            android:id="@+id/btnUpdateGPS"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_gps"
+            android:src="@drawable/ic_gps"
+            android:contentDescription="Use GPS"
+            app:tint="@color/prakriya_teal" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <!-- ======================================================== -->
+        <!-- === FIX 3: "Cancel" and "Save" Button colors are now TEAL === -->
+        <!-- ======================================================== -->
+        <Button
+            android:id="@+id/btnCancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textStyle="bold"
+            android:textColor="@color/prakriya_teal" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/prakriya_teal"
+            app:cornerRadius="8dp"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray">
+
+    <!-- Header (Your existing header is perfect) -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/prakriya"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:id="@+id/headerProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello, User"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="12dp" />
+
+        <Button
+            android:id="@+id/btnMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Maps"
+            android:textSize="14sp"
+            android:background="@drawable/btn_maps_bg"
+            android:drawablePadding="6dp"
+            app:backgroundTint="@color/prakriya_teal"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_map"
+            app:iconTint="@color/white"
+            android:paddingStart="12dp"
+            android:paddingEnd="16dp" />
+    </LinearLayout>
+
+    <!-- This is the container that will display all your posts -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/postsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/bottomNavigation"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp" />
+
+    <!-- Bottom Navigation (Your existing navigation is perfect) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

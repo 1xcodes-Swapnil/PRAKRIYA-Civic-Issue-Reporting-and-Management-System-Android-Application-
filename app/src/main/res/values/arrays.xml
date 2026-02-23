@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- This array provides the options for the filter spinner in MapsActivity -->
+    <string-array name="filter_options">
+        <item>All Issues</item>
+        <item>Unresolved</item>
+        <item>In Progress</item>
+        <item>Resolved</item>
+    </string-array>
+
+    <!-- This array provides the options for the issue type spinner in AddPostActivity -->
+    <string-array name="issue_types">
+        <item>Select Issue Type</item>
+        <item>Pothole</item>
+        <item>Street Light</item>
+        <item>Garbage Accumulation</item>
+        <item>Drainage Problem</item>
+        <item>Water Supply</item>
+        <item>Road Damage</item>
+        <item>Traffic Signal</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>

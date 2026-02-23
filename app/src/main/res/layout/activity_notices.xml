@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context=".NoticesActivity">
+
+    <!-- Header (Your existing header is perfect, no changes needed) -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/prakriya"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:id="@+id/headerProfileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Notices"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="12dp" />
+
+
+    </LinearLayout>
+
+    <!-- Content Area: Now dynamic -->
+    <LinearLayout
+        android:id="@+id/content_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/bottomNavigation"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Official Notices Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_bell"
+                app:tint="@color/text_primary"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Official Notices"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp" />
+        </LinearLayout>
+
+        <!-- THIS IS THE RECYCLERVIEW THAT WILL SHOW THE NOTICES -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/noticesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+
+        <!-- Progress Bar for loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+
+        <!-- Text to show if no notices are found -->
+        <TextView
+            android:id="@+id/tvNoNotices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No official notices at the moment."
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation (Your existing navigation is perfect) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

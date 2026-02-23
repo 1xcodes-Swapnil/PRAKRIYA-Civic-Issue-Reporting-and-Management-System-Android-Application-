@@ -1,0 +1,83 @@
+# =========================
+# Android / Gradle
+# =========================
+.gradle/
+build/
+*/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration file (SDK path etc.)
+local.properties
+
+# =========================
+# Android Studio
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Keystore files (should be kept secret)
+*.jks
+*.keystore
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Kotlin / Java
+# =========================
+*.class
+out/
+
+# =========================
+# Firebase / Secrets
+# =========================
+google-services.json
+*.json
+
+# (Optional)
+# If you want collaborators to add their own Firebase config
+# keep google-services.json ignored
+
+# =========================
+# Gradle Wrapper 
+# =========================
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# =========================
+# NDK
+# =========================
+obj/
+lib/
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.swp
+*~
+
+# =========================
+# APK / Bundle outputs
+# =========================
+*.apk
+*.aab
+
+# =========================
+# Android Profiling
+# =========================
+*.hprof

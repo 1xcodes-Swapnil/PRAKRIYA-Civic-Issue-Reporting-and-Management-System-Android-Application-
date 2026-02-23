@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/white"> <!-- CHANGE 1: Card background is now white -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header for the Duplicate Group -->
+        <TextView
+            android:id="@+id/tvGroupTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/prakriya_teal"
+            android:padding="16dp"
+            android:text="Issue Type - Location"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- This RecyclerView will list the individual duplicate posts -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvIndividualIssues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Action Button at the bottom -->
+        <Button
+            android:id="@+id/btnMergeAndForward"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/prakriya_orange"
+            android:text="Merge and Forward to Authority"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Row: Reporter Name and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/reporterProfileImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_user_placeholder"
+                android:background="@drawable/circle_bg"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:id="@+id/reporterNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reporter Name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/issueStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● Unresolved"
+                android:textColor="@color/status_unresolved"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Issue Image -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/issueImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pothole_image"
+                android:background="@color/gray_light"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Issue Description -->
+        <TextView
+            android:id="@+id/issueDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description of the issue reported by the user."
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Location and Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/status_unresolved"/>
+
+            <TextView
+                android:id="@+id/issueLocationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Location Address"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:paddingStart="6dp" />
+
+            <TextView
+                android:id="@+id/issueDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Admin Action Button -->
+        <Button
+            android:id="@+id/btnVerifyIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify &amp; Take Action"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/white"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

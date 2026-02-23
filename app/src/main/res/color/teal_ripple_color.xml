@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This color is a semi-transparent version of your teal color. -->
+    <!-- It will show when the button is pressed. -->
+    <item android:color="@color/prakriya_teal" android:alpha="0.12"/>
+</selector>

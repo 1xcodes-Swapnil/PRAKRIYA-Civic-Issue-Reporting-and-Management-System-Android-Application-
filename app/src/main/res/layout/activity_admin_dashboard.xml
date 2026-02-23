@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    tools:context=".AdminDashboardActivity">
+
+    <!-- Header (Your existing code) -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/prakriya"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:id="@+id/headerAdminName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello, Admin"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="12dp" />
+
+        <Button
+            android:id="@+id/btnMaps"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Maps"
+            app:backgroundTint="@color/prakriya_teal"
+            android:textColor="@color/white"
+            app:icon="@drawable/ic_map"
+            app:iconTint="@color/white"
+            android:textSize="14sp"
+            android:background="@drawable/btn_maps_bg"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="6dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="16dp" />
+    </LinearLayout>
+
+    <!-- ========================================================== -->
+    <!-- === THIS IS THE PROGRESSBAR BLOCK THAT WAS ADDED         === -->
+    <!-- ========================================================== -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+    <!-- ========================================================== -->
+
+    <!-- RecyclerView for the list of issues (Your existing code) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/issuesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_above="@id/bottomNavigation"
+        android:clipToPadding="false"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp" />
+
+    <!-- Bottom Navigation (Your existing code) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/admin_bottom_nav_menu" />
+
+</RelativeLayout>

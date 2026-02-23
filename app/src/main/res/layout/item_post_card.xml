@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/userProfileImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_user_placeholder"
+                android:background="@drawable/circle_bg"
+                android:contentDescription="User" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:id="@+id/userNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/postStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="● Unresolved"
+                android:textColor="@color/status_unresolved"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/postImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pothole_image"
+                android:background="@color/gray_light"
+                android:contentDescription="Issue" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/postDescriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description of the issue will be loaded here from the database."
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:lineSpacingExtra="2dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/status_unresolved"
+                android:contentDescription="Location" />
+
+            <TextView
+                android:id="@+id/postLocationTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Location Address"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:paddingStart="6dp" />
+
+            <TextView
+                android:id="@+id/postDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Upvote Button -->
+            <LinearLayout
+                android:id="@+id/btnUpvote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:id="@+id/imgUpvote"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_thumb_up"
+                    android:contentDescription="Like" />
+
+                <TextView
+                    android:id="@+id/tvUpvoteCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:paddingStart="6dp" />
+            </LinearLayout>
+
+            <!-- Comment Button -->
+            <LinearLayout
+                android:id="@+id/btnComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_comment"
+                    android:contentDescription="Comment" />
+
+                <TextView
+                    android:id="@+id/tvCommentCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:paddingStart="6dp" />
+            </LinearLayout>
+
+            <!-- Share Button -->
+            <ImageView
+                android:id="@+id/btnShare"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_share"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Share" />
+        </LinearLayout>
+
+        <!-- Comment Section (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/commentSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="12dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:id="@+id/commentsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/edit_text_bg"
+                android:padding="8dp">
+
+                <EditText
+                    android:id="@+id/etComment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Add a comment..."
+                    android:textSize="14sp"
+                    android:background="@android:color/transparent"
+                    android:maxLines="3"
+                    android:inputType="textMultiLine|textCapSentences" />
+
+                <Button
+                    android:id="@+id/btnPostComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Post"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_post_comment"
+                    android:textSize="13sp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

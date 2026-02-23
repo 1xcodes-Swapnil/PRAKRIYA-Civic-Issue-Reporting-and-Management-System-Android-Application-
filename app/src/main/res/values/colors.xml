@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+     <!-- Teal -->
+    <color name="colorPrimaryVariant">#0F5D59</color>
+    <!-- Orange from your logo -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnBackground">#000000</color>
+
+
+
+    <!-- Default theme colors (you can leave these if they exist) -->
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Your App's Custom Colors -->
+    <color name="dark_teal">#0F5D59</color>
+    <color name="grey">#808080</color>
+    <color name="grey_warning">#FF8C00</color> <!-- A dark orange, good for warnings like the report button -->
+    <color name="light_grey_background">#F5F5F5</color>
+    <color name="darkgrey">#36454F</color>
+
+    <color name="prakriya_orange">#F4A11E</color>
+    <color name="prakriya_teal">#1F6367</color>
+    <color name="gray_light">#F2F2F2</color>
+    <color name="text_primary">#222222</color>
+
+    <color name="divider">#E0E0E0</color>
+    <color name="text_secondary">#757575</color>
+
+    PRIMARY THEME COLORS
+    The first colorPrimary has been removed. We are keeping the dark teal one.
+    -->
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#FF9800</color>
+
+    <!-- STANDARD AND GRAYSCALE COLORS -->
+
+    <!-- The old gray_medium has been removed. We are keeping the #6B7280 one. -->
+    <color name="gray_dark">#424242</color>
+
+    <!-- UI/STATUS COLORS -->
+    <color name="red">#FF5252</color>
+    <color name="red_unresolved">#F44336</color>
+    <color name="orange">#FF9800</color>
+    <color name="orange_progress">#FFA726</color>
+    <color name="green">#4CAF50</color>
+    <color name="green_resolved">#66BB6A</color>
+    <color name="yellow">#FFC107</color>
+
+    <!-- TEXT & DIVIDER COLORS -->
+
+
+    <!-- STATUS INDICATOR COLORS -->
+    <color name="status_unresolved">#F44336</color>
+    <color name="status_progress">#FF9800</color>
+    <color name="status_resolved">#4CAF50</color>
+
+
+
+
+    <color name="background_gray">#F5F5F5</color>
+
+
+
+    <!--
+        FINAL, CORRECTED DEFINITIONS FOR YOUR THEME AND NAVIGATION
+        These are the ones your app is now using.
+    -->
+    <color name="colorPrimary">#1E6267</color> <!-- The dark teal color -->
+    <color name="gray_medium">#6B7280</color>    <!-- The gray for inactive icons -->
+
+    <color name="comment_bg">#F8F8F8</color>
+
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Allows the app to access the device's precise location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Permissions Block -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Camera Permission -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Allows the app to read images from the phone's storage -->
+    <!-- For Android 13 (API 33) and above -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- For older versions -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" /> <!-- Storage Permissions for different Android versions -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" /> <!-- Camera Feature (optional, app will still install on devices without camera) -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" /> <!-- Feature Block -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Prakriya20">
+        <activity
+            android:name=".AuthorityMapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AuthorityAddNoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AuthorityProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DuplicatesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddNoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminMapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="API_KEY_HERE" />
+
+        <activity
+            android:name=".UserDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AuthorityDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Example: your other activities (declare each only once) -->
+        <activity
+            android:name=".start"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoticesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlertsActivity"
+            android:exported="false" /> <!-- =============================================================== -->
+        <!-- THE MISSING LINE: This declaration fixes the ActivityNotFound crash. -->
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

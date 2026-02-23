@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white">  <!-- THIS IS THE ADDED LINE -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- The rest of your file remains exactly the same -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tvNoticeTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Notice Title"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvNoticeTimestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1h ago"
+                android:textColor="@color/gray_medium"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNoticeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is the full description of the notice where all the details will be displayed."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:id="@+id/location_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/text_secondary" />
+
+            <TextView
+                android:id="@+id/tvNoticeLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sector 20-25"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/date_range_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_date_range"
+                app:tint="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/tvNoticeDateRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="21 Oct - 23 Oct"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

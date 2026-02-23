@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@android:color/white">
+
+    <!-- Logo anchored to top-middle -->
+    <ImageView
+        android:id="@+id/logoBig"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/prakriya"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Container for toggles and forms below logo -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/logoBig"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+
+        <!-- Role toggle buttons -->
+        <LinearLayout
+            android:id="@+id/roleRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="6dp">
+
+            <ToggleButton
+                android:id="@+id/toggleUser"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/role_toggle_selector"
+                android:textOn="User"
+                android:textOff="User"
+                android:textAllCaps="false"
+                android:textColor="#0F5D59"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_margin="4dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleGov"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/role_toggle_selector"
+                android:textOn="Authority"
+                android:textOff="Authority"
+                android:textAllCaps="false"
+                android:textColor="#0F5D59"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_margin="4dp" />
+
+            <ToggleButton
+                android:id="@+id/toggleAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/role_toggle_selector"
+                android:textOn="Admin"
+                android:textOff="Admin"
+                android:textAllCaps="false"
+                android:textColor="#0F5D59"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_margin="4dp" />
+        </LinearLayout>
+
+        <!-- USER Layout -->
+        <LinearLayout
+            android:id="@+id/userLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:gravity="center_horizontal">
+
+            <!-- === MODIFIED HERE: The parent container for the two buttons === -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+                <Button android:id="@+id/btnUserSignIn" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign In" android:layout_marginEnd="6dp"/>
+                <Button android:id="@+id/btnUserSignUp" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign Up" android:layout_marginStart="6dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/userSignInForm"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+                <EditText android:id="@+id/userSignInEmail" android:hint="Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/userSignInPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnUserLogin" android:text="Login" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/userSignUpForm"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+                <EditText android:id="@+id/userSignUpName" android:hint="Name" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/userSignUpEmail" android:hint="Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <EditText android:id="@+id/userSignUpLocation" android:hint="Location (e.g., City)" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                    <ImageButton android:id="@+id/btnGetUserLocation" android:src="@android:drawable/ic_menu_mylocation" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <EditText android:id="@+id/userSignUpPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/userSignUpConfirm" android:hint="Confirm Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnUserRegister" android:text="Register" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GOV Layout -->
+        <LinearLayout
+            android:id="@+id/govLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:gravity="center_horizontal">
+            <!-- === MODIFIED HERE: The parent container for the two buttons === -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+                <Button android:id="@+id/btnGovSignIn" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign In" android:layout_marginEnd="6dp"/>
+                <Button android:id="@+id/btnGovSignUp" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign Up" android:layout_marginStart="6dp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/govSignInForm" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" android:layout_marginTop="10dp" android:gravity="center_horizontal" android:paddingStart="24dp" android:paddingEnd="24dp">
+                <EditText android:id="@+id/govSignInEmail" android:hint="Gov Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/govSignInPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnGovLogin" android:text="Login" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/govSignUpForm" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" android:layout_marginTop="10dp" android:gravity="center_horizontal" android:paddingStart="24dp" android:paddingEnd="24dp">
+                <EditText android:id="@+id/govSignUpName" android:hint="Authority Name" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/govSignUpEmail" android:hint="Authority Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/govSignUpId" android:hint="Authority ID" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <EditText android:id="@+id/govSignUpLocation" android:hint="Location (e.g., Department City)" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                    <ImageButton android:id="@+id/btnGetGovLocation" android:src="@android:drawable/ic_menu_mylocation" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <EditText android:id="@+id/govSignUpPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnGovRegister" android:text="Register Authority" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ADMIN Layout with Sign-Up -->
+        <LinearLayout
+            android:id="@+id/adminLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:gravity="center_horizontal">
+            <!-- === MODIFIED HERE: The parent container for the two buttons === -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+                <Button android:id="@+id/btnAdminSignIn" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign In" android:layout_marginEnd="6dp"/>
+                <Button android:id="@+id/btnAdminSignUp" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:text="Sign Up" android:layout_marginStart="6dp"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/adminSignInForm" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" android:layout_marginTop="10dp" android:gravity="center_horizontal" android:paddingStart="24dp" android:paddingEnd="24dp">
+                <EditText android:id="@+id/adminSignInEmail" android:hint="Admin Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/adminSignInPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnAdminLogin" android:text="Admin Login" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/adminSignUpForm" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" android:layout_marginTop="10dp" android:gravity="center_horizontal" android:paddingStart="24dp" android:paddingEnd="24dp">
+                <EditText android:id="@+id/adminSignUpName" android:hint="Admin Name" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <EditText android:id="@+id/adminSignUpEmail" android:hint="Admin Email" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <EditText android:id="@+id/adminSignUpLocation" android:hint="Location (e.g., HQ City)" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                    <ImageButton android:id="@+id/btnGetAdminLocation" android:src="@android:drawable/ic_menu_mylocation" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <EditText android:id="@+id/adminSignUpPassword" android:hint="Password" android:inputType="textPassword" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@color/darkgrey" android:textColorHint="@color/grey"/>
+                <Button android:id="@+id/btnAdminRegister" android:text="Register Admin" android:backgroundTint="#0F5D59" android:textColor="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

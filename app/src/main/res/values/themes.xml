@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme for LIGHT mode. -->
+    <style name="Base.Theme.Prakriya20" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:forceDarkAllowed">false</item>
+
+
+        <!-- Apply rounded corners to all MaterialComponents -->
+        <item name="shapeAppearanceSmallComponent">@style/RoundedCorners</item>
+        <item name="shapeAppearanceMediumComponent">@style/RoundedCorners</item>
+        <item name="shapeAppearanceLargeComponent">@style/RoundedCorners</item>
+    </style>
+
+    <style name="RoundedCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item> <!-- You can make this 16dp or 20dp -->
+    </style>
+
+    <style name="Theme.Prakriya20" parent="Base.Theme.Prakriya20" />
+
+    <!--
+        ALL THE CUSTOM BOTTOM NAVIGATION STYLES HAVE BEEN DELETED.
+        This is now clean.
+    -->
+
+
+    <!-- ======================================================== -->
+    <!-- === THIS IS THE NEWLY ADDED PART FOR THE DIALOG BOX    === -->
+    <!-- ======================================================== -->
+    <style name="Prakriya.Dialog.Alert" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <!-- Sets the background of the entire dialog to white -->
+        <item name="android:background">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+
+        <!-- Sets the main title text color to black -->
+        <item name="materialAlertDialogTitleTextStyle">@style/Prakriya.Dialog.TitleText</item>
+
+        <!-- Sets the main message text color to black -->
+        <item name="materialAlertDialogBodyTextStyle">@style/Prakriya.Dialog.BodyText</item>
+
+        <!-- Sets the color for the "action" buttons (Delete and Cancel) -->
+        <item name="buttonBarPositiveButtonStyle">@style/Prakriya.Dialog.PositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Prakriya.Dialog.NegativeButton</item>
+    </style>
+
+    <!-- Helper style for the Title -->
+    <style name="Prakriya.Dialog.TitleText" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Helper style for the Body Message -->
+    <style name="Prakriya.Dialog.BodyText" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <!-- Helper style for the "Delete" button -->
+    <style name="Prakriya.Dialog.PositiveButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/prakriya_teal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Helper style for the "Cancel" button -->
+    <style name="Prakriya.Dialog.NegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/prakriya_teal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- ======================================================== -->
+
+    <style name="Theme.CustomDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <!-- This line makes the dialog's own window background transparent -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- This line removes the default title bar that can sometimes appear -->
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>

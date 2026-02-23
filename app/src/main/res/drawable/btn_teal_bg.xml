@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This 'selector' helps ensure the color is applied correctly -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The 'item' tag is the key part of the fix. -->
+    <!-- It contains the shape and color we want to force. -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- This sets the main background color of the button -->
+            <solid android:color="@color/prakriya_teal" />
+
+            <!-- This adds rounded corners to the button -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</selector>

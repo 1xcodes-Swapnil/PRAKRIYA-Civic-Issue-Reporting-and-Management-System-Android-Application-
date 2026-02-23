@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer circle (represents GPS range) -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="2"
+        android:pathData="M12,4a8,8 0 1,0 0,16a8,8 0 1,0 0,-16z" />
+
+    <!-- Crosshairs -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M12,2v2M12,20v2M2,12h2M20,12h2" />
+
+    <!-- Center dot -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M12,11a1,1 0 1,0 0,2a1,1 0 1,0 0,-2z" />
+</vector>

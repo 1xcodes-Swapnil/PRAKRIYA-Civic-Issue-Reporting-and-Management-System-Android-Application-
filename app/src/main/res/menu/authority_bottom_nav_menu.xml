@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Home Button (Same as Admin) -->
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <!-- Add Notice Button (Same as Admin) -->
+    <item
+        android:id="@+id/nav_add_notice"
+        android:icon="@drawable/ic_add_circle"
+        android:title="Add Notice" />
+
+    <!-- Accepted Button (New Button) -->
+    <item
+        android:id="@+id/nav_accepted"
+        android:icon="@drawable/ic_check_circle"
+        android:title="Accepted" />
+
+    <!-- Profile Button (Same as Admin) -->
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+
+</menu>

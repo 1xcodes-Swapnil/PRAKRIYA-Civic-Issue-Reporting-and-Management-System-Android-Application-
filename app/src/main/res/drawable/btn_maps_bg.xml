@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- THIS IS A LAYER-LIST. IT IS MORE POWERFUL THAN A SIMPLE SHAPE. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- This item defines the teal border and the white background. -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- This forces the white background color. -->
+            <solid android:color="@color/white" />
+            <!-- This forces the teal border color. -->
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/prakriya_teal" />
+            <!-- This sets the rounded corners. -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</layer-list>
